@@ -5,6 +5,18 @@ using namespace std;
 
 Drug::Drug(std::string name, double concentration, int quantity, double price)
 {
+    if (concentration <= 0) {
+        throw exception("The concentration must be a positive number.");
+    }
+
+    if (quantity < 0) {
+        throw exception("The quantity must be a non-negative number.");
+    }
+
+    if (price <= 0) {
+        throw exception("The price must be a positive number.");
+    }
+
     this->name = name;
     this->concentration = concentration;
     this->quantity = quantity;

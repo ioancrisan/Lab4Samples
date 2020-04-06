@@ -3,6 +3,7 @@
 #include "../Lab4Samples/Drug.h"
 
 using namespace Microsoft::VisualStudio::CppUnitTestFramework;
+using namespace std;
 
 namespace Lab4SamplesTest
 {
@@ -13,11 +14,16 @@ namespace Lab4SamplesTest
 		TEST_METHOD(ConstructorTest)
 		{
 			auto drugPtr = new Drug("Euthyrox", 100, 0, 345.99);
-			auto drug2Ptr = new Drug("Euthyrox", 100, 0, 345.99);
 			Assert::AreEqual(100.0, drugPtr->getConcentration());
 			Assert::AreEqual(345.99, drugPtr->getPrice());
+			Assert::AreEqual(0, drugPtr->getQuantity());
 			Assert::AreEqual(std::string("Euthyrox"), drugPtr->getName());
-			Assert::AreEqual(drugPtr->toString(), drug2Ptr->toString());
+		}
+
+		TEST_METHOD(ConstructorInvalidPriceTest)
+		{
+			auto funPtr = [this] {  return Drug("Euthyrox", 100, 12, -345.99);;  };
+			Assert::ExpectException<exception>(funPtr);
 		}
 
 		TEST_METHOD(toStringTest)
