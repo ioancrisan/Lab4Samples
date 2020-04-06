@@ -27,3 +27,8 @@ double Drug::getPrice()
 {
     return this->price;
 }
+
+std::string Drug::toString()
+{
+    return this->name + " " + std::to_string(this->concentration) + " " + std::to_string(this->price);
+}

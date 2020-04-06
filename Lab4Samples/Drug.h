@@ -54,5 +54,13 @@ public:
     /// The price.
     /// </returns>
     double getPrice();
+
+    /// <summary>
+    /// Convert this object into a string representation.
+    /// </summary>
+    /// <returns>
+    /// A std::string that represents this object.
+    /// </returns>
+    std::string toString();
 };
 
