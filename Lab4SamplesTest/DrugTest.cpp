@@ -22,7 +22,9 @@ namespace Lab4SamplesTest
 
 		TEST_METHOD(ConstructorInvalidPriceTest)
 		{
-			auto funPtr = [this] {  return Drug("Euthyrox", 100, 12, -345.99);;  };
+			auto funPtr = [this] { 
+				return Drug("Euthyrox", 100, 11, -345.99);
+			};
 			Assert::ExpectException<exception>(funPtr);
 		}
 
