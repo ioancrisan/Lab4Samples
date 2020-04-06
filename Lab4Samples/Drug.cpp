@@ -1,4 +1,7 @@
 #include "Drug.h"
+#include <exception>
+
+using namespace std;
 
 Drug::Drug(std::string name, double concentration, int quantity, double price)
 {
@@ -30,5 +33,21 @@ double Drug::getPrice()
 
 std::string Drug::toString()
 {
-    return this->name + " " + std::to_string(this->concentration) + " " + std::to_string(this->price);
+    return this->name + " " + std::to_string(this->concentration) + " " + std::to_string(this->quantity) + " " + std::to_string(this->price);
+}
+
+Drug& Drug::operator+=(int quantity)
+{
+    this->quantity += quantity;
+    return *this;
+}
+
+Drug& Drug::operator-=(int quantity)
+{
+    if (this->quantity < quantity) {
+        throw exception("You cannot subtract the provided quantity");
+    }
+
+    this->quantity -= quantity;
+    return *this;
 }
