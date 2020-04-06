@@ -29,13 +29,16 @@ namespace Lab4SamplesTest
 		TEST_METHOD(operatorSubtractTest)
 		{
 			auto drug = Drug("Euthyrox", 100, 12, 345.99);
-			drug -= 10;
-			Assert::AreEqual(std::string("Euthyrox 100.000000 2 345.990000"), drug.toString());
+			auto drug2 = drug -= 10;
+			Assert::AreEqual(2, drug2.getQuantity());
+			//Assert::AreSame(drug, drug2);
 		}
 
 		TEST_METHOD(operatorSubtractInvalidQuantityTest)
 		{
 			auto drug = Drug("Euthyrox", 100, 2, 345.99);
+
+			// TODO Assert::ExpectException()
 			try {
 				drug -= 10;
 			}
