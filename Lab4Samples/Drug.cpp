@@ -23,12 +23,12 @@ Drug::Drug(std::string name, double concentration, int quantity, double price)
     this->price = price;
 }
 
-std::string Drug::getName()
+std::string Drug::getName() const
 {
     return this->name;
 }
 
-double Drug::getConcentration()
+double Drug::getConcentration() const
 {
     return this->concentration;
 }

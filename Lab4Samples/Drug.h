@@ -29,7 +29,7 @@ public:
     /// <returns>
     /// The name.
     /// </returns>
-    std::string getName();
+    std::string getName() const;
 
     /// <summary>
     /// Gets the concentration.
@@ -37,7 +37,7 @@ public:
     /// <returns>
     /// The concentration.
     /// </returns>
-    double getConcentration();
+    double getConcentration() const;
 
     /// <summary>
     /// Gets the quantity.
