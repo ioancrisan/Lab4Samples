@@ -12,7 +12,7 @@ private:
     Repository repo;
     Menu menu;
 
-    void createMenu();
+    void CreateMenu();
 
 public:
     /// <summary>

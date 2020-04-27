@@ -1,66 +1,67 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ClassDiagram MajorVersion="1" MinorVersion="1">
   <Comment CommentText="Agregare/Compozitie&#xD;&#xA;Relatie HAS&#xD;&#xA;Intreg - Parte (Fiinta diferita)">
-    <Position X="4.26" Y="13.344" Height="1.208" Width="2.262" />
+    <Position X="3.01" Y="9.344" Height="1.208" Width="2.262" />
   </Comment>
   <Comment CommentText="Derivare/Mostenire&#xD;&#xA;Relatie IS (ESTE)&#xD;&#xA;Aceeasi fiinta">
-    <Position X="13.302" Y="11.344" Height="1.031" Width="1.825" />
+    <Position X="12.052" Y="7.344" Height="1.031" Width="1.825" />
   </Comment>
   <Class Name="Drug">
-    <Position X="0.75" Y="0.5" Width="1.5" />
+    <Position X="0.75" Y="0.5" Width="1.75" />
     <TypeIdentifier>
       <HashCode>AAABAAIAAAIAAAAAAAAABRAAAgAEAACAAAAEAAAAAIA=</HashCode>
       <FileName>Drug.h</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Menu">
-    <Position X="3.25" Y="0.5" Width="1.5" />
+    <Position X="3.25" Y="0.5" Width="2" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAABAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAEAAAAAAAAAAAQAAAAAAAIAAAABAAAAAACAAA=</HashCode>
       <FileName>Menu.h</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="MenuItem">
-    <Position X="5.75" Y="0.5" Width="1.5" />
+    <Position X="6.25" Y="0.5" Width="2" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAQAAAAAIAAAAgAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAABAAAAQAAABAIAAAEgAAAAAAAAAAABAAAAAAAAAA=</HashCode>
       <FileName>MenuItem.h</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="AddDrugUndoCommand">
-    <Position X="8.75" Y="12.75" Width="2" />
+    <Position X="7.5" Y="8.75" Width="2" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAQAAAEAAAAAAgAEAAAAAgAAAAAAAAA=</HashCode>
       <FileName>AddDrugUndoCommand.h</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="ChangeQuantityUndoCommand">
-    <Position X="11.25" Y="12.75" Width="2" />
+    <Position X="10" Y="8.75" Width="2" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAQCAAAAAAAAAAAAAACAAAAAAAIAAAA=</HashCode>
       <FileName>ChangeQuantityUndoCommand.h</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="UndoCommandBase">
-    <Position X="9.75" Y="10" Width="2.5" />
+    <Position X="8.5" Y="6.25" Width="2.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>UndoCommandBase.h</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Controller">
-    <Position X="2" Y="9.75" Width="1.5" />
+    <Position X="0.75" Y="5.75" Width="1.75" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAABAAAAAEAAAAAAAAAAAAEAAAAAAAAAgA=</HashCode>
+      <HashCode>AAAAAAAAAAAABAAAAAEAAAgAAAAAAAAEAAAAAAAAAiI=</HashCode>
       <FileName>Controller.h</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>
       <Field Name="history" />
       <Field Name="repo" />
+      <Field Name="menu" />
     </ShowAsAssociation>
   </Class>
   <Class Name="History">
-    <Position X="5" Y="10" Width="1.5" />
+    <Position X="3.75" Y="6.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAIABAAAAAAAABABAAAAAAAAAAACAEAEAAA=</HashCode>
       <FileName>History.h</FileName>
@@ -69,8 +70,8 @@
       <Field Name="commandsArray" />
     </ShowAsCollectionAssociation>
   </Class>
-  <Class Name="Repository" Collapsed="true">
-    <Position X="2" Y="12.5" Width="1.5" />
+  <Class Name="Repository">
+    <Position X="0.75" Y="8.5" Width="1.75" />
     <TypeIdentifier>
       <HashCode>AAIAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Repository.h</FileName>

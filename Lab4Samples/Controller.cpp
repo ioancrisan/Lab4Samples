@@ -3,7 +3,7 @@
 #include "AddDrugUndoCommand.h"
 #include <iostream>
 
-void Controller::createMenu()
+void Controller::CreateMenu()
 {
     this->menu.add("Add drug", [this] () { this->AddDrug(); });
     this->menu.add("Undo", [this] () { this->Undo(); });
@@ -45,7 +45,7 @@ bool Controller::Undo()
 
 void Controller::Run()
 {
-    this->createMenu();
+    this->CreateMenu();
 
     try {
         while (true) {

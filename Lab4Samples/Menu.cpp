@@ -1,5 +1,8 @@
 #include "Menu.h"
 #include <functional>
+#include <iostream>
+
+MenuItem notFoundMenuItem(-1, "Not found", []() { std::cout << "Menu item not found."; });
 
 void Menu::show()
 {
@@ -18,4 +21,16 @@ Menu& Menu::add(const MenuItem& item)
 Menu& Menu::add(string displayText, std::function<void()> action)
 {
     return this->add(MenuItem(this->menuItems.size() + 1, displayText, action));
+}
+
+MenuItem& Menu::findItem(int option)
+{
+    // TODO: insert return statement here
+    for (auto i = 0; i < this->menuItems.size(); i++) {
+        if (this->menuItems[i].getOption() == option) {
+            return this->menuItems[i];
+        }
+    }
+
+    return notFoundMenuItem;
 }
