@@ -1,7 +1,6 @@
-#include "Menu.h";
+#include "Controller.h";
 
 int main() {
-    auto menu = Menu();
-    //menu.add("option1", 1);
-    menu.show();
+    auto controller = Controller();
+    controller.Run();
 }

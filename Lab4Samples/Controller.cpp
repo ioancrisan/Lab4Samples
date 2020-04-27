@@ -1,6 +1,13 @@
 #include "Controller.h"
 #include "Drug.h"
 #include "AddDrugUndoCommand.h"
+#include <iostream>
+
+void Controller::createMenu()
+{
+    this->menu.add("Add drug", [this] () { this->AddDrug(); });
+    this->menu.add("Undo", [this] () { this->Undo(); });
+}
 
 void Controller::AddDrug(string name, double concentration, int quantity)
 {
@@ -13,10 +20,37 @@ void Controller::AddDrug(string name, double concentration, int quantity)
     this->history.AddUndoCommand(new AddDrugUndoCommand(this->repo, drug));
 }
 
+void Controller::AddDrug()
+{
+    string name;
+    cin >> name;
+
+    double concentration;
+    cin >> concentration;
+
+    int quantity;
+    cin >> quantity;
+
+    this->AddDrug(name, concentration, quantity);
+}
+
 bool Controller::Undo()
 {
     return this->history.Undo();
 
     //
     auto sizeOfHistory = sizeof(History);
+}
+
+void Controller::Run()
+{
+    this->createMenu();
+    this->menu.show();
+
+    while (true) {
+        int option;
+        cin >> option;
+        auto menuItem = this->menu.findItem(option);
+        menuItem.execute();
+    }
 }

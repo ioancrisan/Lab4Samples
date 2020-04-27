@@ -35,7 +35,7 @@ void History::AddUndoCommand(UndoCommandBase* command)
     // TODO test not nullptr
 
     this->commands->push_back(command);
-    this->currentCommandIndex = this->commands->size - 1;
+    this->currentCommandIndex = this->commands->size() - 1;
 }
 
 History::~History()

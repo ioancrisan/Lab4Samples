@@ -10,8 +10,8 @@ private:
 public:
 
     ChangeQuantityUndoCommand(Drug& drug, int quantity)
+        : drug(drug)
     {
-        this->drug = drug;
         this->quantity = quantity;
     }
 

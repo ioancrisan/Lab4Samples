@@ -12,6 +12,7 @@ private:
 
 public:
     AddDrugUndoCommand(Repository& repo, const Drug& drug)
+        : repo(repo)
     {
         this->repo = repo;
 
@@ -20,9 +21,8 @@ public:
     }
 
     AddDrugUndoCommand(Repository& repo, string name, double concentration)
+        : repo(repo)
     {
-        this->repo = repo;
-
         this->name = name;
         this->concentration = concentration;
     }
