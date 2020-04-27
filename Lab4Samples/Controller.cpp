@@ -7,6 +7,7 @@ void Controller::createMenu()
 {
     this->menu.add("Add drug", [this] () { this->AddDrug(); });
     this->menu.add("Undo", [this] () { this->Undo(); });
+    this->menu.add("Quit", [] () { throw string("quit"); });
 }
 
 void Controller::AddDrug(string name, double concentration, int quantity)
@@ -45,12 +46,23 @@ bool Controller::Undo()
 void Controller::Run()
 {
     this->createMenu();
-    this->menu.show();
 
-    while (true) {
-        int option;
-        cin >> option;
-        auto menuItem = this->menu.findItem(option);
-        menuItem.execute();
+    try {
+        while (true) {
+            this->menu.show();
+
+            int option;
+            cin >> option;
+
+            auto menuItem = this->menu.findItem(option);
+            menuItem.execute();
+        }
+    }
+    catch (std::string quitString) {
+        if (quitString != "quit") {
+            throw quitString;
+        }
+
+        // quit the program gracefully
     }
 }
