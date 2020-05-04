@@ -16,6 +16,9 @@ public:
         this->option = option;
         this->displayText = displayText;
         this->action = action;
+
+        // example of function pointer declaration
+        // void (fn*)();
     }
 
     /// <summary>
@@ -24,13 +27,13 @@ public:
     /// <returns>
     /// The item option.
     /// </returns>
-    int getOption();
+    int getOption() const;
 
 
     /// <summary>
     /// Shows the menu item in the console.
     /// </summary>
-    virtual void show();
+    virtual void show() const;
 
     /// <summary>
     /// Executes the action bound to this menu item.

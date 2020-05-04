@@ -50,6 +50,13 @@
   </Class>
   <Class Name="Controller">
     <Position X="0.75" Y="5.75" Width="1.75" />
+    <AssociationLine Name="menu" Type="Menu" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="2.5" Y="5.969" />
+        <Point X="3.75" Y="5.969" />
+        <Point X="3.75" Y="2.761" />
+      </Path>
+    </AssociationLine>
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAABAAAAAEAAAgAAAAAAAAEAAAAAAAAAiI=</HashCode>
       <FileName>Controller.h</FileName>

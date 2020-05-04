@@ -5,9 +5,9 @@
 
 void Controller::CreateMenu()
 {
-    this->menu.add("Add drug", [this] () { this->AddDrug(); });
-    this->menu.add("Undo", [this] () { this->Undo(); });
-    this->menu.add("Quit", [] () { throw string("quit"); });
+    this->menu.add("Add drug", [this]() { this->AddDrug(); });
+    this->menu.add("Undo", [this]() { this->Undo(); });
+    this->menu.add("Quit", []() { throw string("quit"); });
 }
 
 void Controller::AddDrug(string name, double concentration, int quantity)

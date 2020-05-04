@@ -4,7 +4,7 @@
 
 MenuItem notFoundMenuItem(-1, "Not found", []() { std::cout << "Menu item not found."; });
 
-void Menu::show()
+void Menu::show() const
 {
     // TODO display the menu...
     for (auto i = 0; i < this->menuItems.size(); i++) {

@@ -33,7 +33,7 @@ public:
     /// <summary>
     /// Shows this menu.
     /// </summary>
-    virtual void show() override;
+    virtual void show() const override;
 
     /// <summary>
     /// Adds a new item.
