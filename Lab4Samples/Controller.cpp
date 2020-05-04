@@ -1,13 +1,15 @@
+#include <iostream>
+
 #include "Controller.h"
 #include "Drug.h"
 #include "AddDrugUndoCommand.h"
-#include <iostream>
+#include "QuitMenuItem.h"
 
 void Controller::CreateMenu()
 {
     this->menu.add("Add drug", [this]() { this->AddDrug(); });
     this->menu.add("Undo", [this]() { this->Undo(); });
-    this->menu.add("Quit", []() { throw string("quit"); });
+    this->menu.add(QuitMenuItem(10));
 }
 
 void Controller::AddDrug(string name, double concentration, int quantity)
@@ -38,9 +40,6 @@ void Controller::AddDrug()
 bool Controller::Undo()
 {
     return this->history.Undo();
-
-    //
-    auto sizeOfHistory = sizeof(History);
 }
 
 void Controller::Run()
@@ -58,11 +57,10 @@ void Controller::Run()
             menuItem.execute();
         }
     }
-    catch (std::string quitString) {
-        if (quitString != "quit") {
-            throw quitString;
-        }
-
+    catch (quitException qex) {
         // quit the program gracefully
+    }
+    catch (exception ex) {
+        cout << "Exception occurred: " << ex.what() << endl;
     }
 }
