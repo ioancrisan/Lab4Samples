@@ -13,6 +13,7 @@ namespace Lab4SamplesTest
 
 		TEST_METHOD(ConstructorTest)
 		{
+			auto repo = Repository();
 		}
 	};
 }

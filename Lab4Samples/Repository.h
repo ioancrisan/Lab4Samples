@@ -1,11 +1,16 @@
 #pragma once
+
 #include <string>
+#include <vector>
 #include "Drug.h"
 
 using namespace std;
 
 class Repository
 {
+private:
+    vector<Drug> data;
+
 public:
     /// <summary>
     /// Removes the drug with the provided name and concentration.
@@ -17,6 +22,10 @@ public:
     /// </returns>
     bool Remove(string name, double concentration);
 
+    /// <summary>
+    /// Adds a drug to the repository.
+    /// </summary>
+    /// <param name="drug">The drug to add.</param>
     void Add(const Drug& drug);
 };
 

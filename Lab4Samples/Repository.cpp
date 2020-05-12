@@ -8,5 +8,5 @@ bool Repository::Remove(string name, double concentration)
 
 void Repository::Add(const Drug& drug)
 {
-    // TODO
+    this->data.push_back(Drug(drug));
 }
